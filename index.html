@@ -18,9 +18,9 @@
 
     <article>
         <div class="pokemon">
-            <div class="nombrePokemon"></div>
-            <div class="numeroPokemon"></div>
-            <div class="tipoPokemon"></div>
+            Nombre: <div class="nombrePokemon"> </div>
+            Numero: <div class="numeroPokemon"></div>
+            Tipo: <div class="tipoPokemon"></div>
         </div>
     </article>
 
@@ -35,16 +35,22 @@
         // Con esto vemos todo el documento de ditto
         fetch('https://pokeapi.co/api/v2/pokemon/ditto')
             .then(response => response.json())
-            .then(data => pokeAPI.parse);
-        if (pokeAPI) { //Queremos trabajar con datos siempre
-            //Puede que haya que cambiar a while para conseguir mostrar todos los pokemon
-            const pokemon = document.querySelector(".pokemon");
-            const nombrePokemon = document.querySelector(".nombrePokemon");
-            const numeroPokemon = document.querySelector(".numeroPokemon");
-            const tipoPokemon = document.querySelector(".tipoPokemon");
+            .then(function (data) {
+                const pokemon = document.querySelector(".pokemon");
+                const nombrePokemon = pokemon.querySelector(".nombrePokemon");
+                const numeroPokemon = pokemon.querySelector(".numeroPokemon");
+                const tipoPokemon = pokemon.querySelector(".tipoPokemon");
 
-        }
+                nombrePokemon.innerText = data.name;
+                numeroPokemon.innerText = data.id;
+                tipoPokemon.innerText = data.types[0].type.name;
 
+
+
+
+
+
+            });
 
 
 
