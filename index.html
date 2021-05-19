@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <title>Pokeapi-front-el-bueno</title>
 </head>
+
+
+
 <body>
-    
+    <header>
+        <h1>POKEDEX</h1>
+    </header>
+
+    <article>
+        <div class="pokemon">
+            <div class="nombrePokemon"></div>
+            <div class="numeroPokemon"></div>
+            <div class="tipoPokemon"></div>
+        </div>
+    </article>
+
+
 </body>
+
+
+<script>
+    //Queremos que nuestro script se inicie cuando cargue la pagina
+    window.addEventListener("DOMContentLoaded", function (e) {
+        const pokeAPI = "";
+        // Con esto vemos todo el documento de ditto
+        fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+            .then(response => response.json())
+            .then(data => pokeAPI.parse);
+        if (pokeAPI) { //Queremos trabajar con datos siempre
+            //Puede que haya que cambiar a while para conseguir mostrar todos los pokemon
+            const pokemon = document.querySelector(".pokemon");
+            const nombrePokemon = document.querySelector(".nombrePokemon");
+            const numeroPokemon = document.querySelector(".numeroPokemon");
+            const tipoPokemon = document.querySelector(".tipoPokemon");
+
+        }
+
+
+
+
+
+
+
+    });
+
+</script>
+
+
 </html>
