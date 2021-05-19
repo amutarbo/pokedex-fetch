@@ -12,19 +12,23 @@
 
 
 <body>
-    <header>
-        <h1>POKEDEX</h1>
-    </header>
 
-    <article>
-        <div class="pokemon">
-            Nombre: <div class="nombrePokemon"> </div>
-            Numero: <div class="numeroPokemon"></div>
-            Tipo: <div class="tipoPokemon"></div>
+    <div class="container">
+        <h1>Pokedex</h1>
+        <hr>
+        <div class="row" id="items"></div>
+    </div>
+    
+
+    <template id="templateCarta">
+        <div class="col-12">
+            <div class="bodyCarta">
+                <h5 id="nombrePokemon">Nombre</h5>
+                <p id="tipoPokemon">Tipo</p>
+                <p id="numeroPokemon">Numero Pokemon</p>
+            </div>
         </div>
-    </article>
-
-
+    </template>
 
     <script src="index.js"></script>
 
